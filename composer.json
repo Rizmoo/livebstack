@@ -16,8 +16,9 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
-        "illuminate/support": "^8.0"
+        "php": "^8.1",
+        "illuminate/support": "^10.0",
+        "livewire/livewire": "^3.0"
     },
     "require-dev": {
         "orchestra/testbench": "^6.0",
@@ -45,10 +46,7 @@
         "laravel": {
             "providers": [
                 "Oxalistech\\LiveBStack\\LiveBStackServiceProvider"
-            ],
-            "aliases": {
-                "LiveBStack": "Oxalistech\\LiveBStack\\LiveBStackFacade"
-            }
+            ]
         }
     }
 }
