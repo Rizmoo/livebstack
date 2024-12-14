@@ -1,0 +1,48 @@
+<?php
+
+namespace App\Http\Livewire;
+
+use YourVendor\LivewireCrud\Traits\WithCrud;
+use {{ model }};
+use YourVendor\LivewireCrud\Forms\Form;
+use YourVendor\LivewireCrud\Tables\Table;
+use Livewire\Component;
+
+class {{ class }} extends Component
+{
+    use WithCrud;
+
+    protected function getModelClass()
+    {
+        return {{ model }}::class;
+    }
+
+    protected function form()
+    {
+        return Form::make()
+            ->schema([
+                // Define your form fields here
+            ]);
+    }
+
+    protected function table()
+    {
+        return Table::make()
+            ->columns([
+                // Define your table columns here
+            ])
+            ->searchable()
+            ->perPage(10);
+    }
+
+    protected function getStats(): array
+    {
+        $model = $this->getModelClass();
+        
+        return [
+            'total' => $model::count(),
+            'active' => $model::where('active', true)->count(),
+            'inactive' => $model::where('active', false)->count(),
+        ];
+    }
+}
