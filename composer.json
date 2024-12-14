@@ -48,5 +48,7 @@
                 "Oxalistech\\LiveBStack\\LiveBStackServiceProvider"
             ]
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
